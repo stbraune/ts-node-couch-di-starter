@@ -1,0 +1,53 @@
+{
+  "name": "ts-node-couch-di-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "assets": "mkdir dist && cp -R src/assets/ dist/assets/",
+    "build": "npm run clean && npm run assets && tsc -p ./src",
+    "build:watch": "npm run build -- --watch",
+    "clean": "rimraf dist",
+    "ts-node": "ts-node",
+    "nodemon": "nodemon",
+    "start:dev": "cross-env NODE_ENV=dev npm run nodemon -- --exec \"npm run ts-node\" -- ./src/index.ts",
+    "start:prod": "cross-env NODE_ENV=prod npm run nodemon -- --exec \"npm run ts-node\" -- ./src/index.ts",
+    "start": "npm run start:dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stbraune/ts-node-couch-di-starter.git"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/stbraune/ts-node-couch-di-starter/issues"
+  },
+  "homepage": "https://github.com/stbraune/ts-node-couch-di-starter",
+  "dependencies": {
+    "@types/express": "^4.0.36",
+    "@types/node": "^7.0.7",
+    "amqp-ts": "^1.4.0",
+    "amqplib": "^0.5.1",
+    "express": "^4.15.3",
+    "injection-js": "^2.1.0",
+    "log4js": "^2.3.1",
+    "pouchdb": "6.2.0",
+    "pouchdb-browser": "6.2.0",
+    "pouchdb-core": "6.2.0",
+    "reflect-metadata": "^0.1.10",
+    "rxjs": "^5.4.1",
+    "ts-node": "^3.3.0",
+    "typings": "^2.1.1",
+    "uuid": "^3.1.0"
+  },
+  "devDependencies": {
+    "cross-env": "^5.0.5",
+    "nodemon": "^1.12.1",
+    "rimraf": "^2.6.1",
+    "ts-node": "^3.3.0",
+    "tslint": "^5.5.0",
+    "typescript": "^2.4.2"
+  }
+}
